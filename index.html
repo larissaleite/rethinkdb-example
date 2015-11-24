@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+
+</head>
+
+<body>
+
+<h3>RethinkDB Example</h3>
+
+<button id="btn-query">Try me</button>
+
+<p id="output"></p>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$('#btn-query').click(function(){
+			$.ajax({
+	            url: '/authors',
+	            dataType: 'html',
+	            type: 'GET',
+	            success: function(response) {
+	                console.log(response);
+	                $("#output").html(response);
+	            },
+	            error: function(error) {
+	                console.log(error);
+	            }
+		    });
+		});
+
+	});
+</script>
+
+</body>
+
+</html>
